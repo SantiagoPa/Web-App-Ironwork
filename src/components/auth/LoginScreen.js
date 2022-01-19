@@ -1,9 +1,35 @@
 import "../../styles/components/bg-img.css";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { types } from "../../types/types";
+import { useContext } from "react";
+import { AuthContext } from "../../authorize/authContext";
 
 export const LoginScreen = () => {
+  
+  const navigate = useNavigate();
 
+  const { dispatch } = useContext(AuthContext);
+
+  const handleLogin = () => {
     
+    const action = {
+      type: types.login,
+      payload: {
+        name: 'test',
+        email: 'test@test.com'
+      }
+    }
+
+    dispatch(action);
+    
+    const lastPath = localStorage.getItem('lastPath') || '/dashboard';
+
+    navigate( lastPath ,{
+        replace: true
+    });
+
+  };
 
   return (
     <div className="container w-75 shadow rounded mt-5">
@@ -44,10 +70,9 @@ export const LoginScreen = () => {
             </div>
 
             <div className="d-grid">
-              {/* <button className="btn btn-dark" >Iniciar Sesión</button> */}
-              <NavLink to="/dashboard" className="btn btn-dark">
-                Iniciar Seccion
-              </NavLink>
+              <button className="btn btn-dark" onClick={handleLogin}>
+                Iniciar Sesión
+              </button>
             </div>
           </form>
         </div>

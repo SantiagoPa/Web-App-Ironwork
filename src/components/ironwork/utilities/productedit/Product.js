@@ -70,7 +70,7 @@ export const Product = () => {
                 alt=""
                 className="productUploadImg"
               />
-              <label for="file">
+              <label className="form-label">
                 <Publish />
               </label>
               <input type="file" id="file" style={{ display: "none" }} />

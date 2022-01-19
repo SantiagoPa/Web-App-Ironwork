@@ -33,11 +33,11 @@ export const NewCustomer = () => {
           <label className="form-label" >Gender</label>
           <div className="newUserGender">
             <input className="form-check-input" type="radio" name="gender" id="male" value="male" />
-            <label className="form-check-label mx-2" for="male">Male</label>
+            <label className="form-check-label mx-2" >Male</label>
             <input className="form-check-input" type="radio" name="gender" id="female" value="female" />
-            <label className="form-check-label mx-2" for="female">Female</label>
+            <label className="form-check-label mx-2" >Female</label>
             <input className="form-check-input" type="radio" name="gender" id="other" value="other" />
-            <label className="form-check-label mx-2" for="other">Other</label>
+            <label className="form-check-label mx-2" >Other</label>
           </div>
         </div>
         <div className="newUserItem">

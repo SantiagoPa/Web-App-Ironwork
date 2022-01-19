@@ -16,9 +16,11 @@ export const DashboardRoutes = () => {
             <Topbar />
             <Routes>
                 <Route path="/" element={<IronworkScreen />} />
+                
                 <Route path="/customers/" element={<IronworkCustomers />} />
                 <Route path="/customers/:customerId" element={ <IronworkCustomersEdit /> } />
                 <Route path="/customer/newCustomer" element={ <IronworkNewCustomer /> } />
+
                 <Route path="/products" element={<IronworkProducts />} />
                 <Route path="/product/:productId" element={<IronworkProductsEdit />} />
                 <Route path="/product/newProduct" element={<IronworkNewProduct /> } />
