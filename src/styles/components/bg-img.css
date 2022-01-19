@@ -1,0 +1,17 @@
+body{
+   border-color: #fefefe;
+}
+
+
+.bg{
+    background-image: url("../../assets/fondo-login.jpg");
+    background-position: center;
+}
+
+.h-screen {
+    height: 90vh;
+}
+
+.flex-col{
+    flex-direction: column;
+}
