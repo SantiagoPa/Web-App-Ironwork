@@ -1,21 +1,19 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { Settings } from "@material-ui/icons";
-import { AuthContext } from "../../../authorize/authContext";
-import { types } from "../../../types/types";
+import { startLogout } from "../../../actions/auth";
 import "./topbar.css";
 
 export const Topbar = () => {
   const navigate = useNavigate();
 
-  const { user, dispatch } = useContext(AuthContext);
+  const dispatch = useDispatch();
+
+  const { name } = useSelector( state => state.auth );
 
   const handleLogout = () => {
-    dispatch({ type: types.logout });
-
-    navigate("/login", {
-      replace: true,
-    });
+      dispatch( startLogout() );
   };
 
   const [dropdown, setDropdowm] = useState(false);
@@ -40,8 +38,9 @@ export const Topbar = () => {
                 settings
                 <Settings className="mx-2" />
               </button>
-              {dropdown ? (
-                <ul className="dropdown-menu d-flex flex-column">
+                <ul className={ dropdown  ? 
+                                          "dropdown-menu d-flex flex-column" 
+                                          : "dropdown-menu flex-column" }>
                   <li>
                     <a className="dropdown-item" href="#">
                       Action
@@ -58,12 +57,9 @@ export const Topbar = () => {
                     </a>
                   </li>
                 </ul>
-              ) : (
-                <ul className="dropdown-menu flex-column"></ul>
-              )}
             </div>
           </div>
-          <span className="text-darkblue">{user.name}</span>
+          <span className="text-darkblue">{ name }</span>
         </div>
       </div>
     </div>

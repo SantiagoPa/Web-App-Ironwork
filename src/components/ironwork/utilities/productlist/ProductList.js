@@ -67,6 +67,7 @@ export const ProductList = () => {
         columns={columns}
         pageSize={8}
         checkboxSelection
+        rowsPerPageOptions={[8]}
       />
     </div>
   );
