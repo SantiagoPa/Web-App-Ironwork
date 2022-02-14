@@ -1,31 +1,167 @@
+import Modal from "react-modal";
+import { useDispatch, useSelector } from "react-redux";
+import { startProductAddNew } from "../../../../actions/product";
+import { uiCloseModalProductC } from "../../../../actions/ui";
+import { useForm } from "../../../../hooks/useForm";
+import { customStyles } from "../../../../styles/customStyles";
 import "./newproduct.css";
 
+Modal.setAppElement("#root");
+
 export const NewProduct = () => {
+  const { modalOpenProductC } = useSelector((state) => state.ui);
+
+  const dispatch = useDispatch();
+
+  const closeModalProduct = () => {
+    dispatch(uiCloseModalProductC());
+  };
+
+  const [formValues, handleInputChange] = useForm({
+    name: '',
+    price: null,
+    category: '',
+    SKU: '',
+    amount: null,
+    model: '',
+    brand: '',
+    description: '',
+    url_img: ''
+  });
+
+  const handleSubmitProduct = (e) => {
+    e.preventDefault();
+    dispatch( startProductAddNew(formValues) );
+    dispatch( uiCloseModalProductC() );
+  }
+
   return (
-    <div className="newProduct m-5">
-      <h1 className="addProductTitle">New Product</h1>
-      <form className="addProductForm">
-        <div className="addProductItem">
-          <label className="form-label">Image</label>
-          <input className="btn btn-outline-light" type="file" id="file" />
-        </div>
-        <div className="addProductItem">
-          <label className="form-label" >Name</label>
-          <input className="form-control" type="text" placeholder="Apple Airpods" />
-        </div>
-        <div className="addProductItem">
-          <label className="form-label" >Stock</label>
-          <input className="form-control" type="text" placeholder="123" />
-        </div>
-        <div className="addProductItem">
-          <label className="form-label" >Active</label>
-          <select className="form-select" name="active" id="active">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-        </div>
-        <button className="btn btn-primary">Create</button>
-      </form>
-    </div>
+    <Modal
+      isOpen={modalOpenProductC}
+      // onAfterOpen={ afterOpenModal }
+      onRequestClose={closeModalProduct}
+      style={customStyles}
+      closeTimeoutMS={300}
+      overlayClassName="modal-fondo"
+    >
+      <div className="newProduct m-5">
+        <h1 className="addProductTitle">New Product</h1>
+        <form className="addProductForm" onSubmit={ handleSubmitProduct }>
+          
+          <div className="d-flex">
+
+            <div className="col me-5">
+              <div className="addProductItem">
+                <label className="form-label">Image</label>
+                <input
+                  className="btn btn-outline-light"
+                  type="file"
+                  id="file"
+                />
+                <input 
+                  className="form-control" 
+                  type="text" 
+                  placeholder="www.img.com"
+                  name='url_img'
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className="addProductItem">
+                <label className="form-label">Name</label>
+                <input 
+                  className="form-control"
+                  type="text" 
+                  name="name"
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className="addProductItem">
+                <label className="form-label">Price</label>
+                <input 
+                  className="form-control" 
+                  type="text" 
+                  name="price"
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className="addProductItem">
+                <label className="form-label">SKU</label>
+                <input 
+                  className="form-control" 
+                  type="text" 
+                  name="SKU"
+                  onChange={handleInputChange}
+                />
+              </div>
+            </div>
+
+            <div className="col">
+              <div className="addProductItem">
+                <label className="form-label">Category</label>
+                <input 
+                  className="form-control" 
+                  type="text" 
+                  name="category"
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className="addProductItem">
+                <label className="form-label">Amount</label>
+                <input 
+                  className="form-control" 
+                  type="text" 
+                  name="amount"
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className="addProductItem">
+                <label className="form-label">Model</label>
+                <input 
+                  className="form-control" 
+                  type="text" 
+                  name="model"
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className="addProductItem">
+                <label className="form-label">Brand</label>
+                <input 
+                  className="form-control" 
+                  type="text" 
+                  name="brand"
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className="addProductItem">
+                <label className="form-label">description</label>
+                <textarea 
+                  className="form-control" 
+                  type="text" 
+                  name="description"
+                  onChange={handleInputChange}
+                />
+              </div>
+              {/* <div className="addProductItem">
+                <label className="form-label">status</label>
+                <select 
+                  className="form-select" 
+                  name="status" 
+                  id="active"
+                  onChange={handleInputChange}
+                  >
+                  <option value={true}>Active</option>
+                  <option value={false}>Inactive</option>
+                </select>
+              </div> */}
+            </div>
+            
+          </div>
+          
+          <div className="row">
+            <button className="btn btn-primary">Create</button>
+          </div>
+        </form>
+      </div>
+    </Modal>
   );
 };

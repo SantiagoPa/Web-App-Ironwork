@@ -1,4 +1,4 @@
-import { axiosLogin, renovacionToken } from '../helpers/axios';
+import { axiosLogin, renovacionToken } from '../helpers/usersRequest';
 import { types } from '../types/types';
 import Swal from 'sweetalert2';
 
@@ -12,7 +12,8 @@ export const startLogin = (email, password) => {
             
             dispatch( login({
                 uid: data.data.user.uid,
-                name: data.data.user.name
+                name: data.data.user.name,
+                role: data.data.user.role
             }));
         
         }else {

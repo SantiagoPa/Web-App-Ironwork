@@ -1,21 +1,16 @@
-import "../../styles/components/bg-img.css";
-import { useNavigate } from "react-router-dom";
-// import { types } from "../../types/types";
 
 import { useDispatch } from 'react-redux';
 import { useForm } from "../../hooks/useForm";
-import { startChecking, startLogin } from "../../actions/auth";
+import { startLogin } from "../../actions/auth";
+import "../../styles/components/bg-img.css";
 
 export const LoginScreen = () => {
-  
-  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
   const [formValues, handleInputChange ] = useForm({
     email: 'test1@test1.com',
     password: '123456'
-  
   });
 
   const { email, password } = formValues;

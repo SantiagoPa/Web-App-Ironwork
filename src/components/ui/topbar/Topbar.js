@@ -6,17 +6,24 @@ import { startLogout } from "../../../actions/auth";
 import "./topbar.css";
 
 export const Topbar = () => {
+
   const navigate = useNavigate();
-
+  
+  
   const dispatch = useDispatch();
-
+  
   const { name } = useSelector( state => state.auth );
-
+  
   const handleLogout = () => {
-      dispatch( startLogout() );
+    dispatch( startLogout() );
   };
-
+  
   const [dropdown, setDropdowm] = useState(false);
+  
+  const handleNavigate = () => {
+    navigate("/dashboard/users");
+    setDropdowm(!dropdown);
+  }
 
   const handleDropdown = () => {
     setDropdowm(!dropdown);
@@ -47,8 +54,8 @@ export const Topbar = () => {
                     </a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Another action
+                    <a className="dropdown-item" onClick={handleNavigate}>
+                      Users
                     </a>
                   </li>
                   <li>

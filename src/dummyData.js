@@ -72,7 +72,7 @@ export const userRows = [
         "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       email: "jon@gmail.com",
       status: "active",
-      transaction: "$120.00",
+      role: "Admin_Role",
     },
     {
       id: 2,
@@ -81,7 +81,7 @@ export const userRows = [
         "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       email: "jon@gmail.com",
       status: "active",
-      transaction: "$120.00",
+      role: "User_Role",
     },
     {
       id: 3,
@@ -90,7 +90,7 @@ export const userRows = [
         "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       email: "jon@gmail.com",
       status: "active",
-      transaction: "$120.00",
+      role: "User_Role",
     },
     {
       id: 4,
@@ -99,7 +99,7 @@ export const userRows = [
         "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       email: "jon@gmail.com",
       status: "active",
-      transaction: "$120.00",
+      role: "User_Role",
     },
     {
       id: 5,
@@ -108,7 +108,7 @@ export const userRows = [
         "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       email: "jon@gmail.com",
       status: "active",
-      transaction: "$120.00",
+      role: "User_Role",
     },
     {
       id: 6,
@@ -117,7 +117,7 @@ export const userRows = [
         "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       email: "jon@gmail.com",
       status: "active",
-      transaction: "$120.00",
+      role: "User_Role",
     },
     {
       id: 7,
@@ -126,7 +126,7 @@ export const userRows = [
         "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       email: "jon@gmail.com",
       status: "active",
-      transaction: "$120.00",
+      role: "User_Role",
     },
     {
       id: 8,
@@ -135,7 +135,7 @@ export const userRows = [
         "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       email: "jon@gmail.com",
       status: "active",
-      transaction: "$120.00",
+      role: "User_Role",
     },
     {
       id: 9,
@@ -144,7 +144,7 @@ export const userRows = [
         "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       email: "jon@gmail.com",
       status: "active",
-      transaction: "$120.00",
+      role: "User_Role",
     },
     {
       id: 10,
@@ -153,7 +153,7 @@ export const userRows = [
         "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       email: "jon@gmail.com",
       status: "active",
-      transaction: "$120.00",
+      role: "User_Role",
     },
     {
       id: 11,
@@ -162,7 +162,7 @@ export const userRows = [
         "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       email: "jon@gmail.com",
       status: "active",
-      transaction: "$120.00",
+      role: "User_Role",
     },
     {
       id: 12,
@@ -171,7 +171,7 @@ export const userRows = [
         "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       email: "jon@gmail.com",
       status: "active",
-      transaction: "$120.00",
+      role: "User_Role",
     },
 ];
 
