@@ -6,6 +6,7 @@ import { DashboardRoutes } from './DashboardRoutes';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 import { startChecking } from '../actions/auth';
+import { HomeScreen } from '../components/public/HomeScreen';
 
 export const AppRouter = () => {
 
@@ -24,13 +25,10 @@ export const AppRouter = () => {
     return (
         <BrowserRouter>
             <Routes>
-                {/* <Route path="/" element={<LoginScreen />} />
-                <Route path="/login" element={<LoginScreen />} />
-                <Route path="/register" element={<RegisterScreen />} /> */}
-
+               
                 <Route exact path="/" element={
                     <PublicRoute isAuthenticated={!!uid}>
-                        <LoginScreen />
+                        <HomeScreen />
                     </PublicRoute>
                 }/>
 
@@ -45,8 +43,6 @@ export const AppRouter = () => {
                         <DashboardRoutes />
                     </PrivateRoute>
                 }/>
-
-                {/* <Route path="/dashboard/*" element={<DashboardRoutes />  } /> */}
 
             </Routes>
         </BrowserRouter>

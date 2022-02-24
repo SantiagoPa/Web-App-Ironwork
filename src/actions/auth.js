@@ -7,9 +7,11 @@ export const startLogin = (email, password) => {
     return async ( dispatch ) => {
         const data = await axiosLogin('auth/login', { email, password });
 
+        
         if(data.message === 'All Correct'){
+
             localStorage.setItem("token", data.data.token);
-            
+            localStorage.setItem("role", data.data.user.role);
             dispatch( login({
                 uid: data.data.user.uid,
                 name: data.data.user.name,
@@ -28,11 +30,11 @@ export const startChecking = ()=>{
         const data = await renovacionToken('auth/renew');
 
         if(data.ok){
-            localStorage.setItem("token", data.token);
             
+            localStorage.setItem("token", data.token);
             dispatch( login({
                 uid: data.uid,
-                name: data.name
+                name: data.name,
             }));
         
         }else {

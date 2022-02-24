@@ -14,3 +14,8 @@ export const uiOpenModalCustomerC  = () => ({ type: types.uiOpenModalCustomerC }
 export const uiCloseModalCustomerC = () => ({ type: types.uiCloseModalCustomerC });
 export const uiOpenModalCustomerU  = () => ({ type: types.uiOpenModalCustomerU });
 export const uiCloseModalCustomerU = () => ({ type: types.uiCloseModalCustomerU });
+
+export const uiOpenModalProviderC  = () => ({ type: types.uiOpenModalProviderC });
+export const uiCloseModalProviderC = () => ({ type: types.uiCloseModalProviderC });
+export const uiOpenModalProviderU  = () => ({ type: types.uiOpenModalProviderU });
+export const uiCloseModalProviderU = () => ({ type: types.uiCloseModalProviderU });

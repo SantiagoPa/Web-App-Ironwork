@@ -18,15 +18,15 @@ export const NewProduct = () => {
   };
 
   const [formValues, handleInputChange] = useForm({
-    name: '',
+    name: null,
     price: null,
-    category: '',
-    SKU: '',
+    category: null,
+    SKU: null,
     amount: null,
-    model: '',
-    brand: '',
-    description: '',
-    url_img: ''
+    model: null,
+    brand: null,
+    description: null,
+    url_img: null
   });
 
   const handleSubmitProduct = (e) => {

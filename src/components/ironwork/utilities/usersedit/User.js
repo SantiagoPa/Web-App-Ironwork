@@ -16,14 +16,6 @@ import "./user.css";
 Modal.setAppElement("#root");
 
 export const User = () => {
-
-  const [formValues, handleInputChange ] = useForm({
-    name:'',
-    email:'',
-    password: '',
-    status: true,
-    role: 'ADMIN_ROLE',
-  });
   
   const dispatch = useDispatch();
 
@@ -49,11 +41,20 @@ export const User = () => {
     }
   }
 
+  const [formValues, handleInputChange, reset ] = useForm({
+    name: undefined,
+    email: undefined,
+    password: undefined,
+    status: true,
+    role: 'USER_ROLE',
+  });
+
   const handleSubmitForm = (e) => {
     e.preventDefault();
-    dispatch(userStartUpdate(user.uid,formValues));
+    dispatch(userStartUpdate(user.uid, formValues));
     dispatch(uiClosModalUserU());
     dispatch(userClearActiveEvent());
+    reset();
   }
 
   return (
@@ -96,8 +97,7 @@ export const User = () => {
               <div className="userShowInfo">
                 <LocationSearching className="userShowIcon" />
                 <span className="userShowInfoTitle">
-                  {user.status ? "active" : "inactive"}
-                  active
+                  status: {user.status ? "active" : "inactive"}
                 </span>
               </div>
             </div>
@@ -143,7 +143,6 @@ export const User = () => {
                   <select 
                     className="form-select"
                     name="status" 
-                    id="active-status"
                     onChange={ handleInputChange }
                   >
                     <option value={true}>Active</option>

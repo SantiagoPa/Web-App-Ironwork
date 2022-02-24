@@ -60,3 +60,40 @@ code {
 .w__50{
   width: 50vw;
 }
+
+.shadow__chart{
+  margin: 20px;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.h__50{
+  height: 50vh;
+}
+
+.h__60{
+  height: 60vh;
+}
+
+.h__75{
+  height: 75vh;
+}
+
+.h__85{
+  height: 85vh;
+}
+
+.h__small{
+  height: 30vh;
+}
+
+.fz-5{
+  font-size: 5ex;
+}
+
+.img-sizing{
+  height: 10vh;
+  width: 10vw;
+}
+

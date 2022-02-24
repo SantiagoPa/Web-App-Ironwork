@@ -1,87 +1,28 @@
-import React from 'react';
-import "./widgetsm.css";
 import { Visibility } from "@material-ui/icons";
+import { useSelector } from "react-redux";
+import "./widgetsm.css";
 
 export const WidgetSm = () => {
+
+    const { eventsUser } = useSelector(state => state.users);
+
     return (
         <div className="widgetSm">
-            <span className="widgetSmTitle">New Join Members</span>
+            <span className="widgetSmTitle">Members</span>
             <ul className="widgetSmList">
-                <li className="widgetSmListItem">
-                <img
-                    src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                    alt=""
-                    className="widgetSmImg"
-                />
-                <div className="widgetSmUser">
-                    <span className="widgetSmUsername">Anna Keller</span>
-                    <span className="widgetSmUserTitle">Software Engineer</span>
-                </div>
-                <button className="widgetSmButton">
-                    <Visibility className="widgetSmIcon" />
-                    Display
-                </button>
-                </li>
-                <li className="widgetSmListItem">
-                <img
-                    src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                    alt=""
-                    className="widgetSmImg"
-                />
-                <div className="widgetSmUser">
-                    <span className="widgetSmUsername">Anna Keller</span>
-                    <span className="widgetSmUserTitle">Software Engineer</span>
-                </div>
-                <button className="widgetSmButton">
-                    <Visibility className="widgetSmIcon" />
-                    Display
-                </button>
-                </li>
-                <li className="widgetSmListItem">
-                <img
-                    src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                    alt=""
-                    className="widgetSmImg"
-                />
-                <div className="widgetSmUser">
-                    <span className="widgetSmUsername">Anna Keller</span>
-                    <span className="widgetSmUserTitle">Software Engineer</span>
-                </div>
-                <button className="widgetSmButton">
-                    <Visibility className="widgetSmIcon" />
-                    Display
-                </button>
-                </li>
-                <li className="widgetSmListItem">
-                <img
-                    src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                    alt=""
-                    className="widgetSmImg"
-                />
-                <div className="widgetSmUser">
-                    <span className="widgetSmUsername">Anna Keller</span>
-                    <span className="widgetSmUserTitle">Software Engineer</span>
-                </div>
-                <button className="widgetSmButton">
-                    <Visibility className="widgetSmIcon" />
-                    Display
-                </button>
-                </li>
-                <li className="widgetSmListItem">
-                <img
-                    src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                    alt=""
-                    className="widgetSmImg"
-                />
-                <div className="widgetSmUser">
-                    <span className="widgetSmUsername">Anna Keller</span>
-                    <span className="widgetSmUserTitle">Software Engineer</span>
-                </div>
-                <button className="widgetSmButton">
-                    <Visibility className="widgetSmIcon" />
-                    Display
-                </button>
-                </li>
+                {
+                    eventsUser.map( (user, index) => (
+                        <li key={index} className="widgetSmListItem">
+                            <div className="widgetSmUser">
+                                <span className="widgetSmUsername">{ user.name }</span>
+                                <span className="widgetSmUserTitle">{ user.email }</span>
+                            </div>
+                            <div className="widgetSmButton">
+                               {user.role}
+                            </div>
+                        </li>
+                    ))
+                }
             </ul>
         </div>
     )

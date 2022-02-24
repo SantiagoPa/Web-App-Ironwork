@@ -16,6 +16,11 @@ export const types = {
     uiOpenModalCustomerU:  '[ui-customer] Open modal update',
     uiCloseModalCustomerU: '[ui-customer] Close modal update',  
 
+    uiOpenModalProviderC:  '[ui-provider] Open modal create',
+    uiCloseModalProviderC: '[ui-provider] Close modal create',
+    uiOpenModalProviderU:  '[ui-provider] Open modal update',
+    uiCloseModalProviderU: '[ui-provider] Close modal update',  
+
     authChekingFinish: '[auth] Finish checking login state',
     authStartLogin: '[auth] Start login',
     authLogin: '[auth] Login',
@@ -40,6 +45,14 @@ export const types = {
     productUpdated: '[product] Product updated',
     productDeleted: '[product] Product deleted',
     productLoaded: '[product] Products loaded',
+    productAddSales: '[product] add sales',
+    productRemoveToSales: '[product] remove product to sales',
+    clearProductSales: '[product] clear sales',
+    productAddSalesForProvider: '[product] add sale for provider',
+    productRemoveToSalesForProvider: '[product] rm product to sales for provider',
+    clearProductSalesForProvider: '[product] clear sale for provider',
+    buyProductForCustmer: '[product] buy product for customer',
+    buyProductForProvider: '[product] buy product for provider',
     switchProductList:'[product] switch-product',
 
     customerSetActive: '[customer] Set Active',
@@ -50,5 +63,25 @@ export const types = {
     customerDeleted: '[customer] customer deleted',
     customerLoaded: '[customer] customers loaded',
     switchCustomerList:'[customer] switch-customer',
-      
+
+    providerSetActive: '[provider] Set Active',
+    providerClearActiveEvent: '[provider] Clear active event',
+    providerStartAddNew: '[provider] Start add new',
+    providerAddNew: '[provider] Add new',
+    providerUpdated: '[provider] provider updated',
+    providerDeleted: '[provider] provider deleted',
+    providerLoaded: '[provider] provider loaded',
+    switchProviderList:'[provider] switch-provider',
+
+    transactionAddNew: '[transaction] Add new',
+    transactionLoaded: '[transaction] transaction loaded',
+    transactionAddCode: '[transaction] transaction add code',
+    transactionAddPila: '[transaction] transaction pila',
+    purchaseAddNew: '[transaction] purchase add new',
+    purchasesLoaded: '[transaction] purchases loaded',
+
+    analyticsTopSellersLoaded: '[analytics] get top sellers',
+    analyticsCardTrimester: '[analytics] get card trimester',
+    analyticsCardSemester: '[analytics] get card semester',
+    analyticsChartYear: '[analytics] get chart year'
 }

@@ -1,86 +1,66 @@
-import React from 'react';
+import React from "react";
 import "./widgetlg.css";
 
-export const Widgetlg = () => {
+export const Widgetlg = ({ topPila }) => {
+  const formatDate = (date) => {
+    // console.log(date)
+    if (date) {
+      let newDate = new Date(date);
+      return [
+        {
+          day: newDate.getDate(),
+          year: newDate.getFullYear(),
+          month: newDate.getUTCMonth(),
+        },
+      ];
+    }
+  };
 
-    const Button = ({ type }) => {
-        return <button className={"widgetLgButton " + type}>{type}</button>;
-    };
-
-    return (
-        <div className="widgetLg">
-            <h3 className="widgetLgTitle">Latest transactions</h3>
-            <table className="widgetLgTable">
-                <tbody>
-
-                    <tr className="widgetLgTr">
-                        <th className="widgetLgTh">Customer</th>
-                        <th className="widgetLgTh">Date</th>
-                        <th className="widgetLgTh">Amount</th>
-                        <th className="widgetLgTh">Status</th>
-                    </tr>
-                    <tr className="widgetLgTr">
-                        <td className="widgetLgUser">
-                        <img
-                            src="https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                            alt=""
-                            className="widgetLgImg"
-                        />
-                        <span className="widgetLgName">Susan Carol</span>
-                        </td>
-                        <td className="widgetLgDate">2 Jun 2021</td>
-                        <td className="widgetLgAmount">$122.00</td>
-                        <td className="widgetLgStatus">
-                        <Button type="Approved" />
-                        </td>
-                    </tr>
-                    <tr className="widgetLgTr">
-                        <td className="widgetLgUser">
-                        <img
-                            src="https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                            alt=""
-                            className="widgetLgImg"
-                        />
-                        <span className="widgetLgName">Susan Carol</span>
-                        </td>
-                        <td className="widgetLgDate">2 Jun 2021</td>
-                        <td className="widgetLgAmount">$122.00</td>
-                        <td className="widgetLgStatus">
-                        <Button type="Declined" />
-                        </td>
-                    </tr>
-                    <tr className="widgetLgTr">
-                        <td className="widgetLgUser">
-                        <img
-                            src="https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                            alt=""
-                            className="widgetLgImg"
-                        />
-                        <span className="widgetLgName">Susan Carol</span>
-                        </td>
-                        <td className="widgetLgDate">2 Jun 2021</td>
-                        <td className="widgetLgAmount">$122.00</td>
-                        <td className="widgetLgStatus">
-                        <Button type="Pending" />
-                        </td>
-                    </tr>
-                    <tr className="widgetLgTr">
-                        <td className="widgetLgUser">
-                        <img
-                            src="https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                            alt=""
-                            className="widgetLgImg"
-                        />
-                        <span className="widgetLgName">Susan Carol</span>
-                        </td>
-                        <td className="widgetLgDate">2 Jun 2021</td>
-                        <td className="widgetLgAmount">$122.00</td>
-                        <td className="widgetLgStatus">
-                        <Button type="Approved" />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-      </div>
-    );
-}
+  return (
+    <div className="widgetLg">
+      <h3 className="widgetLgTitle">Latest transactions</h3>
+      <table className="widgetLgTable">
+        <tbody className="overflow-auto">
+          <tr className="widgetLgTr">
+            <th className="widgetLgTh text-primary">index</th>
+            <th className="widgetLgTh text-primary">Customer</th>
+            <th className="widgetLgTh text-primary">Date</th>
+            <th className="widgetLgTh text-primary">discount</th>
+            <th className="widgetLgTh text-primary">Total price</th>
+            <th className="widgetLgTh text-primary">Total to pay</th>
+          </tr>
+          {topPila.map((element, index) => (
+            <tr key={index} className="widgetLgTr">
+              <td>{index + 1}</td>
+              <td className="widgetLgUser">
+                <span className="widgetLgName">{element.customer.name}</span>
+              </td>
+              <td className="widgetLgDate">
+                {element.date &&
+                  formatDate(element.date).map((e, i) => (
+                    <span key={i}>
+                      {e.day} - {e.month + 1} - {e.year}
+                    </span>
+                  ))}
+              </td>
+              <td
+                className="
+                    widgetLgAmount 
+                    text-info 
+                  "
+              >
+                {element.discount * 100}%
+              </td>
+              <td className="widgetLgAmount text-success">
+                $ {element.totalPrice}
+              </td>
+              <td className="widgetLgStatus text-success">
+                $ {element.totalToPay}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};

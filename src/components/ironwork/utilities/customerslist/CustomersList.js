@@ -62,7 +62,6 @@ export const CustomersList = () => {
   };
 
   const handleDelete = (id) => {
-    console.log(id);
     dispatch(customerStartDelete(id));
   };
 

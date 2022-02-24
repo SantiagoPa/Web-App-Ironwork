@@ -10,9 +10,11 @@ export const authReducer = ( state=initialState, action ) => {
     
     switch (action.type) {
         case types.authLogin:
+            const data = action.payload
+            // console.log(action.payload)
             return {
                 ...state,
-                ...action.payload,
+                ...data,
                 checking: false
             }
             

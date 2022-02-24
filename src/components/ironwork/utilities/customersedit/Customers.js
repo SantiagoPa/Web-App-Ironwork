@@ -7,7 +7,6 @@ import {
   MailOutline,
   PermIdentity,
   PhoneAndroid,
-  Publish,
 } from "@material-ui/icons";
 import { uiCloseModalCustomerU } from "../../../../actions/ui";
 import { customStyles } from "../../../../styles/customStyles";
@@ -41,22 +40,23 @@ export const Customers = () => {
     };
   }
 
-  const [formValues, handleInputChange] = useForm({
+  const [formValues, handleInputChange, reset] = useForm({
     _id: Customer.id,
-    name: '',
-    NIT: '',
-    CC: '',
-    RUT: '',
-    phone: '',
-    address: '',
-    email: '',
-    type: 'COMPANY',
-    status: null
+    name: undefined,
+    NIT: undefined,
+    CC: undefined,
+    RUT: undefined,
+    phone: undefined,
+    address: undefined,
+    email: undefined,
+    type: "COMPANY",
+    status: true
   });
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
     dispatch(customerStartUpdate(Customer.id , formValues));
+    reset();
     closeModalCustomerU();
   }
 

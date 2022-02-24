@@ -1,42 +1,58 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import './featuredinfo.css';
 import { ArrowDownward, ArrowUpward } from "@material-ui/icons";
 
-export const FeaturedInfo = () => {
+export const FeaturedInfo = ({cardSemester}) => {
+
+    const [perc, setPerc] = useState(0)
+
+    const utilities = cardSemester.map((el)=>{
+        return{
+            utility: el.income-el.outgoins
+        }
+    })
+    const porcentaje = (utilities[5].utility*100/utilities[4].utility-100)
+    
+    const mediaTrimestre1 = (utilities[5].utility + utilities[4].utility +utilities[3].utility)/3
+    const mediaTrimestre2 = (utilities[2].utility + utilities[1].utility +utilities[0].utility)/3
+   
+    const porcentaje2 = (mediaTrimestre1*100/mediaTrimestre2-100)
+
     return (
         <div className="featured">
             <div className="featuredItem">
-                <span className="featuredTitle">Revanue</span>
+                <span className="featuredTitle">utility</span>
                 <div className="featuredMoneyContainer">
-                <span className="featuredMoney">$2,415</span>
+                <span className="featuredMoney">$ {utilities[5].utility}</span>
                 <span className="featuredMoneyRate">
-                    -11.4 
-                    <ArrowDownward  className="featuredIcon negative"/>
+                    %{Math.floor(porcentaje)}{" "}
+                    {
+                        porcentaje < 0 ? (
+                            <ArrowDownward  className="featuredIcon negative"/>
+                        ) : (
+                            <ArrowUpward  className="featuredIcon"/>
+                        )
+                    } 
                 </span>
                 </div>
                 <span className="featuredSub">Compared to last month</span>
             </div>
             <div className="featuredItem">
-                <span className="featuredTitle">Sales</span>
+                <span className="featuredTitle">utility</span>
                 <div className="featuredMoneyContainer">
-                <span className="featuredMoney">$4,415</span>
+                <span className="featuredMoney">$ {Math.floor(mediaTrimestre1)}</span>
                 <span className="featuredMoneyRate">
-                    -1.4 
-                    <ArrowDownward className="featuredIcon negative"/>
+                    %{Math.floor(porcentaje2)}{" "}
+                    {
+                        porcentaje2 < 0 ? (
+                            <ArrowDownward  className="featuredIcon negative"/>
+                        ) : (
+                            <ArrowUpward  className="featuredIcon"/>
+                        )
+                    } 
                 </span>
                 </div>
-                <span className="featuredSub">Compared to last month</span>
-            </div>
-            <div className="featuredItem">
-                <span className="featuredTitle">Cost</span>
-                <div className="featuredMoneyContainer">
-                <span className="featuredMoney">$2,225</span>
-                <span className="featuredMoneyRate">
-                    +2.4 
-                    <ArrowUpward className="featuredIcon"/>
-                </span>
-                </div>
-                <span className="featuredSub">Compared to last month</span>
+                <span className="featuredSub">Compared to last trimestes</span>
             </div>
         </div>
     )

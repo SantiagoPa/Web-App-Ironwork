@@ -14,14 +14,14 @@ export const NewCustomer = () => {
   const { modalOpenCustomerC } = useSelector((state) => state.ui);
 
   const [formValues, handleInputChange] = useForm({
-    name: "",
-    type: "",
-    CC: "",
-    RUT: "",
-    NIT: "",
-    email: "",
-    address: "",
-    phone: "",
+    name: null,
+    type: null,
+    CC: null,
+    RUT: null,
+    NIT: null,
+    email: null,
+    address: null,
+    phone: null,
   });
 
   const handleSubmitCustomer = (e) => {

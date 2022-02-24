@@ -7,6 +7,8 @@ const initialState = {
     modalOpenProductU: false,
     modalOpenCustomerC: false,
     modalOpenCustomerU: false,
+    modalOpenProviderC: false,
+    modalOpenProviderU: false,
 }
 
 export const uiReducer = (state=initialState, action) => {
@@ -78,6 +80,30 @@ export const uiReducer = (state=initialState, action) => {
             return{
                 ...state,
                 modalOpenCustomerU: false
+            }
+
+        case types.uiOpenModalProviderC:
+            return {
+                ...state,
+                modalOpenProviderC: true
+            }
+        
+        case types.uiCloseModalProviderC:
+            return {
+                ...state,
+                modalOpenProviderC: false
+            }
+        
+        case types.uiOpenModalProviderU:
+            return {
+                ...state,
+                modalOpenProviderU: true
+            }
+        
+        case types.uiCloseModalProviderU:
+            return {
+                ...state,
+                modalOpenProviderU: false
             }
 
         default:

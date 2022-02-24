@@ -30,9 +30,10 @@ export const startProductAddNew = (body) => {
       const resp = await postProduct("product", body);
 
       if (resp.message === "All Correct") {
+        alert("product added");
         dispatch(productAddNew(resp.data));
       } else {
-        Swal.fire("Error", resp.message, "error");
+        alert("error, the action could not be performed");
       }
     } catch (error) {
       console.log(error);
@@ -52,9 +53,10 @@ export const productStartUpdate = (id, body) => {
       const resp = await putProduct("product",id, body);
 
       if (resp.message === "product updated") {
+        alert("product updated");
         dispatch(productUpdated(resp.data.newProduct));
       } else {
-        Swal.fire("Error", resp.message, "error");
+        alert("error, the action could not be performed");
       }
     } catch (error) {
       console.log(error);
@@ -73,11 +75,49 @@ export const productStartDelete = (id) => {
     try {
       const resp = await deleteProduct("product", id);
       console.log(resp);
+      alert("product delete");
       dispatch(productDeleted(id));
     } catch (error) {
+      alert("error, the action could not be performed");
       console.log(error);
     }
   };
 }
 
 const productDeleted = (event) => ({ type: types.productDeleted, payload: event });
+
+export const productAddSales = (event) => ({
+  type: types.productAddSales,
+  payload: event
+});
+
+export const productRemoveToSales = (event) => ({
+  type: types.productRemoveToSales,
+  payload: event
+});
+
+
+export const clearProductSales = () => ({ type: types.clearProductSales });
+
+
+export const productAddSalesForProvider = (event) => ({
+  type: types.productAddSalesForProvider,
+  payload: event
+});
+
+export const productRemoveToSalesForProvider = (event) => ({
+  type: types.productRemoveToSalesForProvider,
+  payload: event
+});
+
+export const clearProductSalesForProvider = () => ({ type: types.clearProductSalesForProvider });
+
+export const buyProductForCustomer = (event) => ({ 
+  type: types.buyProductForCustmer,
+  payload: event
+});
+
+export const buyProductForProvider = (event) => ({
+  type: types.buyProductForProvider,
+  payload: event
+})

@@ -1,15 +1,17 @@
 import axios from "axios";
-
-const url = "http://localhost:8000/api/";
+import { url } from './url';
 
 const axiosLogin = async (endpoint, body = {}) => {
+  const token = localStorage.getItem("token") || "";
   try {
-    let resp = await axios.post(`${url}${endpoint}`, body);
+    let resp = await axios.post(`${url}${endpoint}`, body,{
+      headers: { "access-token": token },
+    });
     let data = resp.data;
     return data;
   } catch (error) {
     return {
-      message: "Email or Password wrong",
+      message: error
     };
   }
 };
@@ -45,9 +47,12 @@ const postUser = async (endpoint, body = {}) => {
   }
 };
 
-const getUsers = async (endpoint, bool = false) => {
+const getUsers = async (endpoint, bool = true) => {
+  const token = localStorage.getItem("token") || "";
   try {
-    let resp = await axios.get(`${url}${endpoint}?status=${bool}`);
+    let resp = await axios.get(`${url}${endpoint}?status=${bool}`,{
+      headers: { "access-token": token },
+    });
     let data = await resp.data;
     return data;
   } catch (error) {

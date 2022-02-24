@@ -15,9 +15,9 @@ export const NewUser = () => {
   const ui = useSelector((state) => state.ui );
 
   const [formValues, handleInputChange] = useForm({
-    name: '',
-    email: '',
-    password: '',
+    name: null,
+    email: null,
+    password: null,
     role: 'ADMIN_ROLE'
   });
 

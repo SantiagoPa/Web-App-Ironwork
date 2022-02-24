@@ -11,10 +11,10 @@ import "./userlist.css";
 import { userSetActive, userStartDelete } from "../../../../actions/user";
 
 export const UserList = () => {
+
   const { eventsUser } = useSelector((state) => state.users);
 
   const dispatch = useDispatch();
-
   const [toggle, setToggle] = useState(true);
 
   const action = {

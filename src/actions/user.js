@@ -13,9 +13,10 @@ export const startUserAddNew = (body) => {
       const resp = await postUser("user", body);
 
       if (resp.message === "user added") {
+        alert("user added");
         dispatch(userAddNew(resp.data));
       } else {
-        Swal.fire("Error", resp.message, "error");
+        alert("error, the action could not be performed");
       }
     } catch (error) {
       console.log(error);
@@ -40,12 +41,14 @@ export const userClearActiveEvent = () => ({
 export const userStartUpdate = (uid, body) => {
   return async (dispatch) => {
     try {
-      const resp = await putUser("user", uid, body);
 
+      const resp = await putUser("user", uid, body);
       if (resp.message === "user updated") {
+        alert("user updated");
+        console.log(resp.data.newUser)
         dispatch(userUpdated(resp.data.newUser));
       } else {
-        Swal.fire("Error", resp.message, "error");
+        alert("error, the action could not be performed");
       }
     } catch (error) {
       console.log(error);
@@ -62,9 +65,11 @@ export const userStartDelete = (uid) => {
   return async (dispatch) => {
     try {
       const resp = await deleteUser("user", uid);
+      alert("user delete");
       console.log(resp);
       dispatch(userDeleted(uid));
     } catch (error) {
+      alert("error, the action could not be performed");
       console.log(error);
     }
   };

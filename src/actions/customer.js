@@ -32,8 +32,10 @@ export const startCustomerAddNew = (body) => {
       const resp = await postCustomer("customer", body);
 
       if (resp.message === "All Correct") {
+        alert("customer added");
         dispatch(customerAddNew(resp.data));
       } else {
+        alert("error, the action could not be performed");
         console.log(resp);
       }
     } catch (error) {
@@ -53,9 +55,10 @@ export const customerStartUpdate = (id, body) => {
       const resp = await putCustomer("customer", id, body);
 
       if (resp.message === "customer updated") {
+        alert("customer updated");
         dispatch(customerUpdated(resp.data.newCustomer));
       } else {
-        Swal.fire("Error", resp.message, "error");
+        alert("error, the action could not be performed");
       }
     } catch (error) {
       console.log(error);
@@ -72,9 +75,11 @@ export const customerStartDelete = (id) => {
   return async (dispatch) => {
     try {
       const resp = await deleteCustomer("customer",id);
+      alert("customer delete");
       console.log(resp)
       dispatch(customerDeleted(id));
     } catch (error) {
+      alert("error, the action could not be performed");
       console.log(error);
     }
   };

@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { uiCloseModalProductU } from "../../../../actions/ui";
 import { Publish } from "@material-ui/icons";
 import { customStyles } from "../../../../styles/customStyles";
-import "./product.css";
 import { productClearActiveEvent, productStartUpdate } from "../../../../actions/product";
 import { useForm } from "../../../../hooks/useForm";
+import  imgNotFound  from '../../../../assets/not-found.png';
+import "./product.css";
 
 Modal.setAppElement("#root");
 
@@ -34,23 +35,23 @@ export const Product = () => {
     };
   }
 
-  const [formValues, handleInputChange] = useForm({
+  const [formValues, handleInputChange, reset] = useForm({
     _id: Product._id,
-    name: '',
-    price: '',
-    url_img: '',
-    category: '',
-    SKU: '',
-    amount: '',
-    model: '',
-    brand: '',
-    description: '',
+    name: undefined,
+    price: undefined,
+    category: undefined,
+    SKU: undefined,
+    amount: undefined,
+    model: undefined,
+    brand: undefined,
+    description: undefined,
     status: true,
   });
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
     dispatch( productStartUpdate(Product._id,formValues) );
+    reset();
     dispatch(uiCloseModalProductU());
     dispatch(productClearActiveEvent());
   }
@@ -80,7 +81,7 @@ export const Product = () => {
                 src={
                   Product.url_img
                     ? Product.url_img
-                    : "https://maxler.com/local/templates/maxler/assets/img/not-found.png"
+                    : imgNotFound
                 }
                 alt=""
                 className="productInfoImg"
@@ -149,12 +150,6 @@ export const Product = () => {
                 name="price"
                 onChange={handleInputChange}
                 />
-              <input 
-                type="text" 
-                placeholder="url img" 
-                name="url_img"
-                onChange={handleInputChange}
-              />
               <input 
                 type="text" 
                 placeholder="category" 
