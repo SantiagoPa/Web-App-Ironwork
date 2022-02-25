@@ -50,7 +50,7 @@ export const ProductList = () => {
     { field: "_id", headerName: "ID", width: 205 },
     {
       field: "name",
-      headerName: "Product",
+      headerName: "nombre",
       width: 200,
       renderCell: (params) => {
         return (
@@ -62,30 +62,30 @@ export const ProductList = () => {
     },
     { 
       field: "amount", 
-      headerName: "amount", 
+      headerName: "stock", 
       width: 125 
     },
     {
       field: "price",
-      headerName: "price",
+      headerName: "precio",
       width: 120,
     },
     {
       field: "brand",
-      headerName: "Brand",
+      headerName: "marca",
       width: 200,
     },
     {
       field: "status",
-      headerName: "Status",
+      headerName: "estado",
       width: 120,
       renderCell: (params) => {
         return (
           <div className="">
             {params.row.status ? (
-              <span className="badge rounded-pill bg-success">Active</span>
+              <span className="badge rounded-pill bg-success">Activo</span>
             ) : (
-              <span className="badge rounded-pill bg-danger">Inactive</span>
+              <span className="badge rounded-pill bg-danger">Inactivo</span>
             )}
           </div>
         );
@@ -93,7 +93,7 @@ export const ProductList = () => {
     },
     {
       field: "action",
-      headerName: "Action",
+      headerName: "accion",
       width: 150,
       renderCell: (params) => {
         return (
@@ -116,7 +116,7 @@ export const ProductList = () => {
                 )}
               }
             >
-                Edit
+                Editar
             </button>
             {
               params.row.status 
@@ -139,11 +139,11 @@ export const ProductList = () => {
         className="
           d-flex 
           align-items-center">
-        <h2 className="display-5"> Product List </h2>
+        <h2 className="display-5"> Lista de Productos </h2>
         <div className="d-flex mt-3 ms-4 align-itmes-center">
           <Toggle onChange={ (e)=>setToggle(e.target.checked)} toggle={toggle} />
           <p className="ms-3">
-            products: { toggle ?"Active":"Inactive"}
+            Producto: { toggle ?"Activo":"Inactivo"}
           </p>
         </div>
         <button 
@@ -153,7 +153,7 @@ export const ProductList = () => {
           btn-outline-primary"
           onClick={handleOpenModalC}
         >
-          Create
+          Crear
         </button>
       </div>
         <DataGrid

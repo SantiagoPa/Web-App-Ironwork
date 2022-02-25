@@ -36,12 +36,12 @@ export const SalesProvider = ({ provadierInfo }) => {
     <div className="col-5 shadow__chart d-flex flex-column justify-content-center">
       <div className="row my-2">
         <div className="col d-flex flex-column">
-          <span>Provider:</span>
-          <span>{provadierInfo ? "name: " + provadierInfo.name : ""}</span>
-          <span> {provadierInfo ? "email: " + provadierInfo.email : ""}</span>
+          <span>Proveedor:</span>
+          <span>{provadierInfo ? "nombre: " + provadierInfo.name : ""}</span>
+          <span> {provadierInfo ? "correo: " + provadierInfo.email : ""}</span>
         </div>
       </div>
-      <span className="mb-2">Products:</span>
+      <span className="mb-2">Productos:</span>
       <div className="row my-2 h__50 overflow-auto">
         <div className="col">
           {myProductsProvider.map((prod, index) => (
@@ -58,7 +58,7 @@ export const SalesProvider = ({ provadierInfo }) => {
           className="btn btn-outline-success"
           onClick={handleModalProvider}
         >
-          add payment option
+          agregar opcion de pago
         </button>
         <span className="text-success">total: $ {totalBuyProvider}</span>
       </div>

@@ -45,14 +45,14 @@ export const NewCustomer = () => {
       overlayClassName="modal-fondo"
     >
       <div className="newUser m-5">
-        <h1 className="display-5">New Customer</h1>
+        <h1 className="display-5">Cliente Nuevo</h1>
 
         <form className="newUserForm d-flex justify-content-center" onSubmit={handleSubmitCustomer}>
           
           <div className="d-flex">
             <div className="row w-25-c mx-2">
               <div className="newUserItem">
-                <label className="form-label">name</label>
+                <label className="form-label">nombre</label>
                 <input
                   className="form-control"
                   type="text"
@@ -90,7 +90,7 @@ export const NewCustomer = () => {
             </div>
             <div className="row w-25-c">
             <div className="newUserItem">
-                <label className="form-label">Phone</label>
+                <label className="form-label">celular</label>
                 <input
                   className="form-control"
                   type="text"
@@ -99,7 +99,7 @@ export const NewCustomer = () => {
                 />
               </div>
               <div className="newUserItem">
-                <label className="form-label">Address</label>
+                <label className="form-label">direccion</label>
                 <input
                   className="form-control"
                   type="text"
@@ -108,7 +108,7 @@ export const NewCustomer = () => {
                 />
               </div>
               <div className="newUserItem">
-                <label className="form-label">Email</label>
+                <label className="form-label">correo</label>
                 <input
                   className="form-control"
                   type="email"
@@ -117,7 +117,7 @@ export const NewCustomer = () => {
                 />
               </div>
                 <div className="newUserItem">
-                  <label className="form-label">type</label>
+                  <label className="form-label">tipo</label>
                   <select 
                     className="form-select" 
                     name="type" 

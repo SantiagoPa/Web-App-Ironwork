@@ -18,16 +18,16 @@ export const Widgetlg = ({ topPila }) => {
 
   return (
     <div className="widgetLg">
-      <h3 className="widgetLgTitle">Latest transactions</h3>
+      <h3 className="widgetLgTitle">Ultimas Transacciones (ordenes de ventas)</h3>
       <table className="widgetLgTable">
         <tbody className="overflow-auto">
           <tr className="widgetLgTr">
             <th className="widgetLgTh text-primary">index</th>
-            <th className="widgetLgTh text-primary">Customer</th>
-            <th className="widgetLgTh text-primary">Date</th>
-            <th className="widgetLgTh text-primary">discount</th>
-            <th className="widgetLgTh text-primary">Total price</th>
-            <th className="widgetLgTh text-primary">Total to pay</th>
+            <th className="widgetLgTh text-primary">Cliente</th>
+            <th className="widgetLgTh text-primary">fecha</th>
+            <th className="widgetLgTh text-primary">descuento</th>
+            <th className="widgetLgTh text-primary">precio</th>
+            <th className="widgetLgTh text-primary">Total a pagar</th>
           </tr>
           {topPila.map((element, index) => (
             <tr key={index} className="widgetLgTr">

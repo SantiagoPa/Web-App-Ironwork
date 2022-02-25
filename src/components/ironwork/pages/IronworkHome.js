@@ -10,7 +10,6 @@ import "../../../styles/components/ironwork/pages/ironworkhome.css";
 import { transactionStartLoading } from "../../../actions/transactions";
 import {
   balanceStartLoading,
-  chartYearStartLoading,
 } from "../../../actions/analytic";
 
 export const IronworkHome = () => {
@@ -28,11 +27,11 @@ export const IronworkHome = () => {
   const topPila = event.slice(event.length - 10);
 
   const dataSemester = cardSemester.map((element) => {
-    const lineName = `${element.year} month: ${element.month + 1}`;
+    const lineName = `${element.year} mes: ${element.month + 1}`;
     const utility = element.income - element.outgoins
     return {
       name: lineName,
-      utility: utility,
+      utilidad: utility,
     };
   });
 
@@ -41,9 +40,9 @@ export const IronworkHome = () => {
       <FeaturedInfo  cardSemester={cardSemester}/>
       <Chart
         data={dataSemester}
-        title="utility analytic"
+        title="Utilidad Semestral"
         grid
-        dataKey="utility"
+        dataKey="utilidad"
       />
       <div className="homeWidgets">
         <WidgetSm />

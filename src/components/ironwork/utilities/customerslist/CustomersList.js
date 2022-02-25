@@ -69,21 +69,21 @@ export const CustomersList = () => {
     { field: "_id", headerName: "ID", width: 205 },
     {
       field: "name",
-      headerName: "Customers",
+      headerName: "cliente",
       width: 150,
       renderCell: (params) => {
         return <div className="userListUser">{params.row.name}</div>;
       },
     },
-    { field: "email", headerName: "Email", width: 150 },
+    { field: "email", headerName: "correo", width: 150 },
     {
       field: "type",
-      headerName: "Type",
+      headerName: "tipo",
       width: 120,
     },
     {
       field: "status",
-      headerName: "Status",
+      headerName: "estado",
       width: 120,
       renderCell: (params) => {
         return (
@@ -99,17 +99,17 @@ export const CustomersList = () => {
     },
     {
       field: "address",
-      headerName: "Address",
-      width: 130,
+      headerName: "direccion",
+      width: 140,
     },
     {
       field: "phone",
-      headerName: "Phone",
+      headerName: "celular",
       width: 120,
     },
     {
       field: "action",
-      headerName: "Action",
+      headerName: "accion",
       width: 150,
       renderCell: (params) => {
         return (
@@ -131,7 +131,7 @@ export const CustomersList = () => {
                 );
               }}
             >
-              Edit
+              Editar
             </button>
 
             {params.row.status && (
@@ -153,13 +153,13 @@ export const CustomersList = () => {
           d-flex 
           align-items-center"
       >
-        <h2 className="display-5"> Customer List </h2>
+        <h2 className="display-5"> Lista de Clientes </h2>
         <div className="d-flex mt-3 ms-4 align-itmes-center">
           <Toggle
             onChange={(e) => setToggle(e.target.checked)}
             toggle={toggle}
           />
-          <p className="ms-3">Customers: {toggle ? "Active" : "Inactive"}</p>
+          <p className="ms-3">Cliente: {toggle ? "Activo" : "Inactivo"}</p>
         </div>
         <button
           className="
@@ -168,7 +168,7 @@ export const CustomersList = () => {
           btn-outline-primary"
           onClick={handleOpenModalC}
         >
-          Create
+          Crear
         </button>
       </div>
       <DataGrid

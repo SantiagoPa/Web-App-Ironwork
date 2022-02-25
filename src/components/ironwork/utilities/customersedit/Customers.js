@@ -76,10 +76,7 @@ export const Customers = () => {
     >
       <div className="user">
         <div className="userTitleContainer">
-          <h1 className="userTitle">Edit Customer</h1>
-          <Link to="/dashboard/customer/newCustomer">
-            <button className="btn btn-outline-primary">Create</button>
-          </Link>
+          <h1 className="userTitle">Editar Cliente</h1>
         </div>
         <div className="userContainer">
           <div className="userShow">
@@ -90,7 +87,7 @@ export const Customers = () => {
               </div>
             </div>
             <div className="userShowBottom">
-              <span className="userShowTitle">Account Details</span>
+              <span className="userShowTitle">Detalles de la cuenta</span>
               <div className="userShowInfo">
                 <PermIdentity className="userShowIcon" />
                 <span className="userShowInfoTitle">NIT: {Customer.nit}</span>
@@ -99,11 +96,11 @@ export const Customers = () => {
                 <CalendarToday className="userShowIcon" />
                 <span className="userShowInfoTitle">CC: {Customer.cc}</span>
               </div>
-              <span className="userShowTitle">Contact Details</span>
+              <span className="userShowTitle">Detalles de Contacto</span>
               <div className="userShowInfo">
                 <PhoneAndroid className="userShowIcon" />
                 <span className="userShowInfoTitle">
-                  Phone: {Customer.phone}
+                  celular: {Customer.phone}
                 </span>
               </div>
               <div className="userShowInfo">
@@ -115,9 +112,9 @@ export const Customers = () => {
                 <span className="userShowInfoTitle">{Customer.address}</span>
               </div>
               <div className="userShowInfo d-flex flex-column">
-              <span className="userShowTitle">Actions</span>
+              <span className="userShowTitle">acciones</span>
                 <div className="userUpdateItem">
-                    <label className="form-label">type</label>
+                    <label className="form-label">tipo</label>
                     <select 
                       className="form-select" 
                       name="type" 
@@ -129,7 +126,7 @@ export const Customers = () => {
                     </select>
                   </div>
                   <div className="userUpdateItem">
-                    <label className="form-label">Status</label>
+                    <label className="form-label">estado</label>
                     <select 
                       className="form-select" 
                       name="status" 
@@ -144,11 +141,11 @@ export const Customers = () => {
             </div>
           </div>
           <div className="userUpdate">
-            <span className="userUpdateTitle">Edit</span>
+            <span className="userUpdateTitle">Campos a actualizar</span>
             <form className="userUpdateForm" onSubmit={handleSubmitForm}>
               <div className="userUpdateLeft d-flex flex-column justify-content-center">
                 <div className="userUpdateItem">
-                  <label>name</label>
+                  <label>nombre</label>
                   <input
                     type="text"
                     placeholder={Customer.name}
@@ -188,7 +185,7 @@ export const Customers = () => {
                   />
                 </div>
                 <div className="userUpdateItem">
-                  <label>Phone</label>
+                  <label>celular</label>
                   <input
                     type="text"
                     className="userUpdateInput"
@@ -198,7 +195,7 @@ export const Customers = () => {
                   />
                 </div>
                 <div className="userUpdateItem">
-                  <label>Address</label>
+                  <label>direccion</label>
                   <input
                     type="text"
                     className="userUpdateInput"
@@ -208,7 +205,7 @@ export const Customers = () => {
                   />
                 </div>
                 <div className="userUpdateItem">
-                  <label>Email</label>
+                  <label>correo</label>
                   <input
                     type="text"
                     className="userUpdateInput"
@@ -218,7 +215,7 @@ export const Customers = () => {
                   />
                 </div>
                 <div className="mt-4">
-                  <button className="btn btn-primary px-5">Update</button>
+                  <button className="btn btn-primary px-5">Actualizar</button>
                 </div>
               </div>
             </form>

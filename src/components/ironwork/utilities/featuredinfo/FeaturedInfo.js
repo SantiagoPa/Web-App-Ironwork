@@ -34,7 +34,7 @@ export const FeaturedInfo = ({ cardSemester }) => {
     <div className="featured">
       {utilities[5] ? (
         <div className="featuredItem">
-          <span className="featuredTitle">utility</span>
+          <span className="featuredTitle">Utilidad</span>
           <div className="featuredMoneyContainer">
             <span className="featuredMoney">$ {utilities[5].utility}</span>
             <span className="featuredMoneyRate">
@@ -46,7 +46,7 @@ export const FeaturedInfo = ({ cardSemester }) => {
               )}
             </span>
           </div>
-          <span className="featuredSub">Compared to last month</span>
+          <span className="featuredSub">Comparada con el mes anterior</span>
         </div>
       ) : (
         <div
@@ -62,7 +62,7 @@ export const FeaturedInfo = ({ cardSemester }) => {
       )}
       {utilities[5] ? (
         <div className="featuredItem">
-          <span className="featuredTitle">utility</span>
+          <span className="featuredTitle">Utilidad</span>
           <div className="featuredMoneyContainer">
             <span className="featuredMoney">$ {Math.floor(media1)}</span>
             <span className="featuredMoneyRate">
@@ -74,7 +74,7 @@ export const FeaturedInfo = ({ cardSemester }) => {
               )}
             </span>
           </div>
-          <span className="featuredSub">Compared to last month</span>
+          <span className="featuredSub">Comparada con el trimestre anterior</span>
         </div>
       ) : (
         <div

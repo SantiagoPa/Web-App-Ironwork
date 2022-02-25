@@ -70,7 +70,7 @@ export const Provider = () => {
     >
       <div className="user">
         <div className="userTitleContainer">
-          <h1 className="userTitle">Edit Provider</h1>
+          <h1 className="userTitle">Editar Proveedor</h1>
         </div>
         <div className="userContainer">
           <div className="userShow">
@@ -81,16 +81,16 @@ export const Provider = () => {
               </div>
             </div>
             <div className="userShowBottom">
-              <span className="userShowTitle">Account Details</span>
+              <span className="userShowTitle">Detalles de Cuenta</span>
               <div className="userShowInfo">
                 <PermIdentity className="userShowIcon" />
                 <span className="userShowInfoTitle">NIT: {Provider.nit}</span>
               </div>
-              <span className="userShowTitle">Contact Details</span>
+              <span className="userShowTitle">Contacto</span>
               <div className="userShowInfo">
                 <PhoneAndroid className="userShowIcon" />
                 <span className="userShowInfoTitle">
-                  Phone: {Provider.phone}
+                  celular: {Provider.phone}
                 </span>
               </div>
               <div className="userShowInfo">
@@ -102,9 +102,9 @@ export const Provider = () => {
                 <span className="userShowInfoTitle">{Provider.address}</span>
               </div>
               <div className="userShowInfo d-flex flex-column">
-                <span className="userShowTitle">Actions</span>
+                <span className="userShowTitle">Accion</span>
                 <div className="userUpdateItem">
-                  <label className="form-label">Status</label>
+                  <label className="form-label">estado</label>
                   <select
                     className="form-select"
                     name="status"
@@ -120,11 +120,11 @@ export const Provider = () => {
             </div>
           </div>
           <div className="userUpdate">
-            <span className="userUpdateTitle">Edit</span>
+            <span className="userUpdateTitle">Campos a Editar</span>
             <form className="userUpdateForm" onSubmit={handleSubmitForm}>
               <div className="userUpdateLeft d-flex flex-column justify-content-center">
                 <div className="userUpdateItem">
-                  <label>name</label>
+                  <label>nombre</label>
                   <input
                     type="text"
                     placeholder={Provider.name}
@@ -154,7 +154,7 @@ export const Provider = () => {
                   />
                 </div>
                 <div className="userUpdateItem">
-                  <label>Phone</label>
+                  <label>celular</label>
                   <input
                     type="text"
                     className="userUpdateInput"
@@ -164,7 +164,7 @@ export const Provider = () => {
                   />
                 </div>
                 <div className="userUpdateItem">
-                  <label>Address</label>
+                  <label>direccion</label>
                   <input
                     type="text"
                     className="userUpdateInput"
@@ -174,7 +174,7 @@ export const Provider = () => {
                   />
                 </div>
                 <div className="userUpdateItem">
-                  <label>Email</label>
+                  <label>correo</label>
                   <input
                     type="text"
                     className="userUpdateInput"
@@ -184,7 +184,7 @@ export const Provider = () => {
                   />
                 </div>
                 <div className="mt-4">
-                  <button className="btn btn-primary px-5">Update</button>
+                  <button className="btn btn-primary px-5">Actualizar</button>
                 </div>
               </div>
             </form>

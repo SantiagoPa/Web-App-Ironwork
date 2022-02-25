@@ -50,24 +50,24 @@ export const UserList = () => {
     },
     {
       field: "name",
-      headerName: "Name",
+      headerName: "nombre",
       width: 200,
       renderCell: (params) => {
         return <div className="userListUser">{params.row.name}</div>;
       },
     },
-    { field: "email", headerName: "Email", width: 200 },
+    { field: "email", headerName: "correo", width: 200 },
     {
       field: "status",
-      headerName: "Status",
+      headerName: "estado",
       width: 120,
       renderCell: (params) => {
         return (
           <div className="">
             {params.row.status ? (
-              <span className="badge rounded-pill bg-success">Active</span>
+              <span className="badge rounded-pill bg-success">Activo</span>
             ) : (
-              <span className="badge rounded-pill bg-danger">Inactive</span>
+              <span className="badge rounded-pill bg-danger">Inactivo</span>
             )}
           </div>
         );
@@ -75,12 +75,12 @@ export const UserList = () => {
     },
     {
       field: "role",
-      headerName: "role",
+      headerName: "rol",
       width: 160,
     },
     {
       field: "action",
-      headerName: "Action",
+      headerName: "accion",
       width: 150,
       renderCell: (params) => {
         return (
@@ -100,7 +100,7 @@ export const UserList = () => {
                 )
               }
             >
-              Edit
+              Editar
             </button>
             {
               params.row.status 

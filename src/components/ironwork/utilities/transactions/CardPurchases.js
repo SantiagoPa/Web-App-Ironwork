@@ -6,11 +6,11 @@ export const CardPurchases = ({ element }) => {
           element.products.map((el, index) => (
             <div key={index} className="row my-2">
               <div className="col mx-2 d-flex flex-column">
-                <span>product name: {el.name}</span>
+                <span>Nombre del Producto: {el.name}</span>
                 <span>total: $ {el.total}</span>
               </div>
               <div className="col mx-2 d-flex flex-column">
-                <span>amoutn: {el.amount}</span>
+                <span>stock: {el.amount}</span>
                 <span>SKU: {el.SKU}</span>
               </div>
             </div>
@@ -20,7 +20,7 @@ export const CardPurchases = ({ element }) => {
         <div className="col d-flex justify-content-between">
           <div className="d-flex flex-column">
             <p className="text-body">
-              provider:
+              Nombre del Proveedor:
               <span className="text-dark mx-2">{element.provider.name}</span>
             </p>
             <p className="text-body">
@@ -34,17 +34,17 @@ export const CardPurchases = ({ element }) => {
           </div>
           <div className="d-flex flex-column">
             <p className="text-body">
-              payment option
+              Opcion de pago: 
               <span className="text-primary mx-2">{element.paymentOption}</span>
             </p>
             <p className="text-body">
-              payment method:
+              Metodo de pago:
               <span className="text-primary mx-2">
                 {element.paymentMethod}
               </span>
             </p>
             <p className="text-body">
-              total to pay:
+              total:
               <span className="text-success mx-2">$ {element.totalToPay}</span>
             </p>
           </div>

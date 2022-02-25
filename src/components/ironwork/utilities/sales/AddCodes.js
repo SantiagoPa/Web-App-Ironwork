@@ -55,30 +55,30 @@ export const AddCodes = ({
     >
       <div className="row">
         <div className="row">
-          <span className="display-6 my-2 mb-3">Info Transaction</span>
+          <span className="display-6 my-2 mb-3">Informacion de la Transaccion</span>
           <div className="col h__50 overflow-auto">
             <div className="col d-flex flex-column ms-5 mb-3">
               <span>Customer:</span>
               <div className="row">
                 <div className="col d-flex flex-column mx-2">
                   <span>
-                    {customerInfo ? "name: " + customerInfo.name : ""}
+                    {customerInfo ? "nombre: " + customerInfo.name : ""}
                   </span>
                   <span>
-                    {customerInfo ? "email: " + customerInfo.email : ""}
-                  </span>
-                </div>
-                <div className="col d-flex flex-column mx-2">
-                  <span>
-                    {customerInfo ? "phone: " + customerInfo.phone : ""}
-                  </span>
-                  <span>
-                    {customerInfo ? "address: " + customerInfo.address : ""}
+                    {customerInfo ? "correo: " + customerInfo.email : ""}
                   </span>
                 </div>
                 <div className="col d-flex flex-column mx-2">
                   <span>
-                    {customerInfo ? "type: " + customerInfo.type : ""}
+                    {customerInfo ? "celular: " + customerInfo.phone : ""}
+                  </span>
+                  <span>
+                    {customerInfo ? "direccion: " + customerInfo.address : ""}
+                  </span>
+                </div>
+                <div className="col d-flex flex-column mx-2">
+                  <span>
+                    {customerInfo ? "tipo: " + customerInfo.type : ""}
                   </span>
                   <span>{customerInfo ? "RUT: " + customerInfo.RUT : ""}</span>
                 </div>
@@ -87,29 +87,29 @@ export const AddCodes = ({
             {myProducts.map((product, index) => (
               <div key={index}>
                 <div className="row mx-2 shadow__chart">
-                  <label>code serie: {index}</label>
+                  <label>producto: {index + 1}</label>
                   <div className="col d-flex flex-column">
-                    <span className="mb-2">name: {product.name}</span>
+                    <span className="mb-2">nombre: {product.name}</span>
                     <div className="d-flex flex-column">
-                      <label className="">quantity: {product.amount} </label>
-                      <label className="">amount: {product.orderamount} </label>
+                      <label className="">stock: {product.amount} </label>
+                      <label className="">cantidad: {product.orderamount} </label>
                     </div>
                   </div>
                   <div className="col d-flex flex-column">
-                    <span className="mb-2">category: {product.category}</span>
-                    <span>brand: {product.brand}</span>
+                    <span className="mb-2">categoria: {product.category}</span>
+                    <span>marca: {product.brand}</span>
                   </div>
                   <div className="col-3 d-flex flex-column">
                     <img
                       className="productInfoImg"
                       src={product.url_img ? product.url_img : imgNotFound}
                     />
-                    <span>price: {product.price}</span>
+                    <span>precio: {product.price}</span>
                   </div>
                 </div>
                 <div>
                   <div className="mb-3">
-                    <span className="AdminDNSSpan">Added to codes</span>
+                    <span className="AdminDNSSpan">Agregar codigos</span>
                   </div>
                   <div className="InputList d-flex flex-column">
                     <div className="accordion mb-4">
@@ -119,7 +119,7 @@ export const AddCodes = ({
                             onClick={toggleAccordion}
                             className={`accordion-button btn btn-outline-primary`}
                           >
-                            show codes
+                            mostrar codigo
                           </button>
                         </div>
                         <div className={ active 
@@ -167,7 +167,7 @@ export const AddCodes = ({
                       className="btn btn-outline-danger"
                       onClick={handleModal}
                     >
-                      close modal
+                      cerrar modal
                     </button>
                   </div>
                   <div className="d-flex justify-content-center align-items-center">
@@ -175,7 +175,7 @@ export const AddCodes = ({
                       className="btn btn-success"
                       onClick={handleBuyTransaction}
                     >
-                      buy
+                      vender
                     </button>
                     <span className="mx-2 text-success">total: {totalBuy}</span>
                   </div>

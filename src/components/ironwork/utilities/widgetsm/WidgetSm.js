@@ -8,7 +8,7 @@ export const WidgetSm = () => {
 
     return (
         <div className="widgetSm">
-            <span className="widgetSmTitle">Members</span>
+            <span className="widgetSmTitle">Miembros</span>
             <ul className="widgetSmList">
                 {
                     eventsUser.map( (user, index) => (

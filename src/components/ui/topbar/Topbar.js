@@ -52,7 +52,7 @@ export const Topbar = () => {
 
         <div className="topRight">
           <span className="me-4 text-darkblue">
-            role:
+            Rol:
             <em className="text-primary ms-2">
               {auth.role ? auth.role : role}
             </em>
@@ -63,7 +63,7 @@ export const Topbar = () => {
                 className="btn btn-outline-primary"
                 onClick={handleDropdown}
               >
-                settings
+                Avanzado
                 <Settings className="mx-2" />
               </button>
               <ul
@@ -75,23 +75,23 @@ export const Topbar = () => {
               >
                 <li>
                   <a className="dropdown-item" onClick={handleProviderNavigate}>
-                    Providers
+                    Proveedores
                   </a>
                 </li>
                 <li>
                   <a className="dropdown-item" onClick={handleNavigate}>
-                    Users
+                    Usuarios
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" onClick={handleLogout}>
-                    Logout
+                  <a className="dropdown-item text-danger" onClick={handleLogout}>
+                    Salir
                   </a>
                 </li>
               </ul>
             </div>
           </div>
-          <span className="text-darkblue">{auth.name}</span>
+          <span className="text-darkblue">usuario: <em className="text-primary">{auth.name}</em></span>
         </div>
       </div>
     </div>

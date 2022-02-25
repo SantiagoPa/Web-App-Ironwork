@@ -69,18 +69,18 @@ export const User = () => {
     >
        <div className="user w__50">
         <div className="userTitleContainer">
-          <h1 className="userTitle">Edit User</h1>
+          <h1 className="userTitle">Editar Usuario</h1>
         </div>
         <div className="userContainer">
           <div className="userShow">
             <div className="userShowTop">
               <div className="userShowTopTitle">
-                <span className="userShowUsername">Info User</span>
-                <span className="userShowUserTitle">of {user.name}</span>
+                <span className="userShowUsername">Informacion de: </span>
+                <span className="userShowUserTitle">{user.name}</span>
               </div>
             </div>
             <div className="userShowBottom">
-              <span className="userShowTitle">Details</span>
+              <span className="userShowTitle">detalles</span>
               <div className="userShowInfo">
                 <PermIdentity className="userShowIcon" />
                 <span className="userShowInfoTitle">{user.name}</span>
@@ -89,7 +89,7 @@ export const User = () => {
                 <AppsSharp className="userShowIcon" />
                 <span className="userShowInfoTitle">{user.role}</span>
               </div>
-              <span className="userShowTitle">Contact Details</span>
+              <span className="userShowTitle">Contacto</span>
               <div className="userShowInfo">
                 <MailOutline className="userShowIcon" />
                 <span className="userShowInfoTitle">{user.email}</span>
@@ -103,14 +103,14 @@ export const User = () => {
             </div>
           </div>
           <div className="userUpdate">
-            <span className="userUpdateTitle">Edit</span>
+            <span className="userUpdateTitle">Campos a Editar</span>
             <form 
               className="userUpdateForm"
               onSubmit={ handleSubmitForm }
             >
               <div className="userUpdateLeft">
                 <div className="userUpdateItem">
-                  <label>Name</label>
+                  <label>Nombre</label>
                   <input
                     type="text"
                     placeholder={user.name}
@@ -119,18 +119,8 @@ export const User = () => {
                     onChange={ handleInputChange }
                   />
                 </div>
-                {/* <div className="userUpdateItem">
-                  <label>Email</label>
-                  <input
-                    type="text"
-                    placeholder={user.email}
-                    className="userUpdateInput"
-                    name="email"
-                    onChange={ handleInputChange }
-                  />
-                </div> */}
                 <div className="userUpdateItem">
-                  <label>Password</label>
+                  <label>Contraseña</label>
                   <input 
                     type="password" 
                     className="userUpdateInput" 
@@ -139,7 +129,7 @@ export const User = () => {
                   />
                 </div>
                 <div className="userUpdateItem">
-                  <label className="form-label">status</label>
+                  <label className="form-label">Estado</label>
                   <select 
                     className="form-select"
                     name="status" 
@@ -150,7 +140,7 @@ export const User = () => {
                   </select>
                 </div>
                 <div className="userUpdateItem">
-                  <label className="form-label">Role</label>
+                  <label className="form-label">Rol</label>
                   <select 
                     className="form-select"
                     name="role"
@@ -158,12 +148,12 @@ export const User = () => {
                     defaultValue={"USER_ROLE"}
                     id="active-role"
                   >
-                    <option value={"USER_ROLE"}>user_role</option>
-                    <option value={"ADMIN_ROLE"}>admin_role</option>
+                    <option value={"USER_ROLE"}>user</option>
+                    <option value={"ADMIN_ROLE"}>admin</option>
                   </select>
                 </div>
                 <div className="userUpdateItem">
-                  <button className="btn btn-primary">Update</button>
+                  <button className="btn btn-primary">Actualizar</button>
                 </div>
               </div>
             </form>

@@ -3,9 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { uiCloseModalProductU } from "../../../../actions/ui";
 import { Publish } from "@material-ui/icons";
 import { customStyles } from "../../../../styles/customStyles";
-import { productClearActiveEvent, productStartUpdate } from "../../../../actions/product";
+import {
+  productClearActiveEvent,
+  productStartUpdate,
+} from "../../../../actions/product";
 import { useForm } from "../../../../hooks/useForm";
-import  imgNotFound  from '../../../../assets/not-found.png';
+import imgNotFound from "../../../../assets/not-found.png";
 import "./product.css";
 
 Modal.setAppElement("#root");
@@ -50,11 +53,11 @@ export const Product = () => {
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
-    dispatch( productStartUpdate(Product._id,formValues) );
+    dispatch(productStartUpdate(Product._id, formValues));
     reset();
     dispatch(uiCloseModalProductU());
     dispatch(productClearActiveEvent());
-  }
+  };
 
   const closeModalProductU = () => {
     dispatch(uiCloseModalProductU());
@@ -78,11 +81,7 @@ export const Product = () => {
           <div className="productTopRight">
             <div className="productInfoTop">
               <img
-                src={
-                  Product.url_img
-                    ? Product.url_img
-                    : imgNotFound
-                }
+                src={Product.url_img ? Product.url_img : imgNotFound}
                 alt=""
                 className="productInfoImg"
               />
@@ -96,12 +95,12 @@ export const Product = () => {
                   </div>
                   <div className="productInfoItem">
                     <span className="productInfoKey">
-                      price: {Product.price}
+                      precio: {Product.price}
                     </span>
                   </div>
                   <div className="productInfoItem">
                     <span className="productInfoKey">
-                      category: {Product.category}
+                      categoria: {Product.category}
                     </span>
                   </div>
                   <div className="productInfoItem">
@@ -112,22 +111,22 @@ export const Product = () => {
                 <div className="col-5 ms-2">
                   <div className="productInfoItem">
                     <span className="productInfoKey">
-                      amount: {Product.amount}
+                      stock: {Product.amount}
                     </span>
                   </div>
                   <div className="productInfoItem">
                     <span className="productInfoKey">
-                      model: {Product.model}
+                      modelo: {Product.model}
                     </span>
                   </div>
                   <div className="productInfoItem">
                     <span className="productInfoKey">
-                      brand: {Product.brand}
+                      marca: {Product.brand}
                     </span>
                   </div>
                   <div className="productInfoItem">
                     <span className="productInfoKey">
-                      status: {Product.status ? "Active" : "Inactive"}
+                      estado: {Product.status ? "Activo" : "Inactivo"}
                     </span>
                   </div>
                 </div>
@@ -136,60 +135,60 @@ export const Product = () => {
           </div>
         </div>
         <div className="productBottom">
-          <form className="productForm" onSubmit={ handleSubmitForm }>
+          <form className="productForm" onSubmit={handleSubmitForm}>
             <div className="productFormLeft">
-              <input 
-                type="text" 
-                name="name" 
-                placeholder="name product" 
+              <input
+                type="text"
+                name="name"
+                placeholder="nombre del producto"
                 onChange={handleInputChange}
               />
-              <input 
-                type="text" 
-                placeholder="price" 
+              <input
+                type="text"
+                placeholder="precio"
                 name="price"
                 onChange={handleInputChange}
-                />
-              <input 
-                type="text" 
-                placeholder="category" 
+              />
+              <input
+                type="text"
+                placeholder="categoria"
                 name="category"
                 onChange={handleInputChange}
               />
-              <input 
-                type="text" 
-                placeholder="SKU" 
+              <input
+                type="text"
+                placeholder="SKU"
                 name="SKU"
                 onChange={handleInputChange}
               />
-              <input 
-                type="text" 
-                placeholder="amount" 
+              <input
+                type="text"
+                placeholder="stock"
                 name="amount"
-                onChange={handleInputChange}  
+                onChange={handleInputChange}
               />
-              <input 
-                type="text" 
-                placeholder="model" 
+              <input
+                type="text"
+                placeholder="modelo"
                 name="model"
                 onChange={handleInputChange}
               />
-              <input 
-                type="text" 
-                placeholder="brand" 
+              <input
+                type="text"
+                placeholder="marca"
                 name="brand"
                 onChange={handleInputChange}
               />
-              <textarea 
-                type="text" 
-                placeholder="description" 
+              <textarea
+                type="text"
+                placeholder="descripcion"
                 name="description"
                 onChange={handleInputChange}
               />
-              <label className="form-label">Status</label>
-              <select 
-                className="form-select" 
-                name="status" 
+              <label className="form-label">estado</label>
+              <select
+                className="form-select"
+                name="status"
                 id="active"
                 onChange={handleInputChange}
               >
@@ -199,23 +198,11 @@ export const Product = () => {
             </div>
 
             <div className="productFormRight mx-4">
-              
-              <div className="productUpload">
-                <img
-                  src={
-                        Product.url_img 
-                        ? Product.url_img 
-                        : 'https://maxler.com/local/templates/maxler/assets/img/not-found.png' }
-                  alt=""
-                  className="productUploadImg"
-                />
-                <label className="form-label">
-                  <Publish />
-                </label>
-                <input type="file" id="file" style={{ display: "none" }} />
+              <div className="productUpload d-flex justify-content-center flex-column">
+                <Publish className="text-primary display-5"/>
+              <button className="btn btn-primary">Actualizar</button>
               </div>
 
-              <button className="btn btn-primary">Update</button>
             </div>
           </form>
         </div>

@@ -12,7 +12,7 @@ export const Transactions = () => {
       <div className="d-flex">
         <div className="col shadow__chart">
           <span className="display-6 text-primary">
-            Transactions for customer
+            Transacciones con los Clientes
           </span>
           <div className="h__60 overflow-auto mt-2">
             {transactions.map((element, index) => (
@@ -24,7 +24,7 @@ export const Transactions = () => {
       <div className="d-flex">
         <div className="col shadow__chart">
           <span className="text-primary display-6">
-            Transactions for providers
+            Transacciones con los Proveedores
           </span>
           <div className="h__60 overflow-auto">
             {

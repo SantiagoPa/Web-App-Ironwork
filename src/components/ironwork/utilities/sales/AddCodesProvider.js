@@ -64,14 +64,14 @@ export const AddCodesProvider = ({
     >
       <div className="d-flex flex-column">
         <div className="row">
-          <span className="display-6 my-2 mb-3">Info Transaction</span>
+          <span className="display-6 my-2 mb-3">Informacion de la transaccion</span>
           <div className="col h__50 overflow-auto">
             <div className="col d-flex flex-column ms-5 mb-3">
-              <span>Provider:</span>
+              <span>Proveedor:</span>
               <div className="row">
                 <div className="col d-flex flex-column mx-2">
                   <span>
-                    {provadierInfo ? "name: " + provadierInfo.name : ""}
+                    {provadierInfo ? "nombre: " + provadierInfo.name : ""}
                   </span>
                   <span>
                     {provadierInfo ? "email: " + provadierInfo.email : ""}
@@ -79,10 +79,10 @@ export const AddCodesProvider = ({
                 </div>
                 <div className="col d-flex flex-column mx-2">
                   <span>
-                    {provadierInfo ? "phone: " + provadierInfo.phone : ""}
+                    {provadierInfo ? "celular: " + provadierInfo.phone : ""}
                   </span>
                   <span>
-                    {provadierInfo ? "address: " + provadierInfo.address : ""}
+                    {provadierInfo ? "direccion: " + provadierInfo.address : ""}
                   </span>
                 </div>
                 <div className="col d-flex flex-column mx-2">
@@ -98,23 +98,23 @@ export const AddCodesProvider = ({
             {myProductsProvider.map((product, index) => (
               <div key={index}>
                 <div className="row mx-2 shadow__chart">
-                  <label>code serie: {index}</label>
+                  <label>producto: {index+1}</label>
                   <div className="col d-flex flex-column">
-                    <span className="mb-2">name: {product.name}</span>
+                    <span className="mb-2">nombre: {product.name}</span>
                     <div className="d-flex flex-column">
-                      <label className="">amount: {product.orderamount} </label>
+                      <label className="">cantidad: {product.orderamount} </label>
                     </div>
                   </div>
                   <div className="col d-flex flex-column">
-                    <span className="mb-2">category: {product.category}</span>
-                    <span>brand: {product.brand}</span>
+                    <span className="mb-2">categoria: {product.category}</span>
+                    <span>marca: {product.brand}</span>
                   </div>
                   <div className="col-3 d-flex flex-column">
                     <img
                       className="productInfoImg"
                       src={product.url_img ? product.url_img : imgNotFound}
                     />
-                    <span>price: {product.price}</span>
+                    <span>precio: {product.price}</span>
                   </div>
                 </div>
                 <div></div>
@@ -122,10 +122,10 @@ export const AddCodesProvider = ({
             ))}
           </div>
           <div className="col-4">
-            <span className="display-6">added payment option</span>
+            <span className="display-6">agregar opcion de pago</span>
             <div className="d-flex flex-column">
               <div className="d-flex flex-column">
-                <label className="form-label">payment option</label>
+                <label className="form-label">opcion de pago</label>
                 <select
                   className="form-select"
                   name="paymentOptionForm"
@@ -145,7 +145,7 @@ export const AddCodesProvider = ({
               <div className="d-flex flex-column">
                 <div className="me-4">
                   <label className="form-label">
-                    pyament method (partial payment)
+                    metodo de pago (cuotas)
                   </label>
                   <select
                     className="form-select"
@@ -154,23 +154,23 @@ export const AddCodesProvider = ({
                     defaultValue={"Cash"}
                   >
                     <option value={"partial payment - 1 instalmenst"}>
-                      1 instalmenst
+                      1 cuota
                     </option>
                     <option value={"partial payment - 2 instalmenst"}>
-                      2 instalmenst
+                      2 cuotas
                     </option>
                     <option value={"partial payment - 3 instalmenst"}>
-                      3 instalmenst
+                      3 cuotas
                     </option>
                     <option value={"partial payment - 4 instalmenst"}>
-                      4 instalmenst
+                      4 cuotas
                     </option>
                   </select>
                 </div>
                 <div className="mt-3">
                   <input
                     className="form-control"
-                    placeholder="custom payment method"
+                    placeholder="metodo de pago customizado"
                     name="paymentMehtodCustom"
                     onChange={handleInputChange}
                   />
@@ -189,7 +189,7 @@ export const AddCodesProvider = ({
                       className="btn btn-outline-danger"
                       onClick={handleModalProvider}
                     >
-                      close modal
+                      cerrar modal
                     </button>
                   </div>
                   <div className="d-flex justify-content-center align-items-center">
@@ -197,7 +197,7 @@ export const AddCodesProvider = ({
                       className="btn btn-success"
                       onClick={handleBuyTransaction}
                     >
-                      buy
+                      comprar
                     </button>
                     <span className="mx-2 text-success">
                       total: {totalBuyProvider}

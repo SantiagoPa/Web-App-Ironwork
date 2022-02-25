@@ -51,23 +51,9 @@ export const NewProduct = () => {
           <div className="d-flex">
 
             <div className="col me-5">
+    
               <div className="addProductItem">
-                <label className="form-label">Image</label>
-                <input
-                  className="btn btn-outline-light"
-                  type="file"
-                  id="file"
-                />
-                <input 
-                  className="form-control" 
-                  type="text" 
-                  placeholder="www.img.com"
-                  name='url_img'
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div className="addProductItem">
-                <label className="form-label">Name</label>
+                <label className="form-label">Nombre</label>
                 <input 
                   className="form-control"
                   type="text" 
@@ -76,7 +62,7 @@ export const NewProduct = () => {
                 />
               </div>
               <div className="addProductItem">
-                <label className="form-label">Price</label>
+                <label className="form-label">Precio</label>
                 <input 
                   className="form-control" 
                   type="text" 
@@ -93,11 +79,8 @@ export const NewProduct = () => {
                   onChange={handleInputChange}
                 />
               </div>
-            </div>
-
-            <div className="col">
               <div className="addProductItem">
-                <label className="form-label">Category</label>
+                <label className="form-label">Categoria</label>
                 <input 
                   className="form-control" 
                   type="text" 
@@ -105,8 +88,11 @@ export const NewProduct = () => {
                   onChange={handleInputChange}
                 />
               </div>
+            </div>
+
+            <div className="col">
               <div className="addProductItem">
-                <label className="form-label">Amount</label>
+                <label className="form-label">Stock</label>
                 <input 
                   className="form-control" 
                   type="text" 
@@ -115,7 +101,7 @@ export const NewProduct = () => {
                 />
               </div>
               <div className="addProductItem">
-                <label className="form-label">Model</label>
+                <label className="form-label">Modelo</label>
                 <input 
                   className="form-control" 
                   type="text" 
@@ -124,7 +110,7 @@ export const NewProduct = () => {
                 />
               </div>
               <div className="addProductItem">
-                <label className="form-label">Brand</label>
+                <label className="form-label">Marca</label>
                 <input 
                   className="form-control" 
                   type="text" 
@@ -133,7 +119,7 @@ export const NewProduct = () => {
                 />
               </div>
               <div className="addProductItem">
-                <label className="form-label">description</label>
+                <label className="form-label">Descripcion</label>
                 <textarea 
                   className="form-control" 
                   type="text" 
@@ -141,24 +127,12 @@ export const NewProduct = () => {
                   onChange={handleInputChange}
                 />
               </div>
-              {/* <div className="addProductItem">
-                <label className="form-label">status</label>
-                <select 
-                  className="form-select" 
-                  name="status" 
-                  id="active"
-                  onChange={handleInputChange}
-                  >
-                  <option value={true}>Active</option>
-                  <option value={false}>Inactive</option>
-                </select>
-              </div> */}
             </div>
             
           </div>
           
           <div className="row">
-            <button className="btn btn-primary">Create</button>
+            <button className="btn btn-primary">Crear</button>
           </div>
         </form>
       </div>

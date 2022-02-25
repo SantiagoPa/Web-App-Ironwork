@@ -44,24 +44,24 @@ export const ProviderList = () => {
     { field: "_id", headerName: "ID", width: 210 },
     {
       field: "name",
-      headerName: "Provider",
+      headerName: "nombre",
       width: 180,
       renderCell: (params) => {
         return <div className="userListUser">{params.row.name}</div>;
       },
     },
-    { field: "email", headerName: "Email", width: 210 },
+    { field: "email", headerName: "correo", width: 210 },
     {
       field: "status",
-      headerName: "Status",
+      headerName: "estado",
       width: 120,
       renderCell: (params) => {
         return (
           <div className="">
             {params.row.status ? (
-              <span className="badge rounded-pill bg-success">Active</span>
+              <span className="badge rounded-pill bg-success">Activo</span>
             ) : (
-              <span className="badge rounded-pill bg-danger">Inactive</span>
+              <span className="badge rounded-pill bg-danger">Inactivo</span>
             )}
           </div>
         );
@@ -69,17 +69,17 @@ export const ProviderList = () => {
     },
     {
       field: "address",
-      headerName: "Address",
+      headerName: "direccion",
       width: 170,
     },
     {
       field: "phone",
-      headerName: "Phone",
+      headerName: "celular",
       width: 120,
     },
     {
       field: "action",
-      headerName: "Action",
+      headerName: "accion",
       width: 120,
       renderCell: (params) => {
         return (
@@ -98,7 +98,7 @@ export const ProviderList = () => {
                 );
               }}
             >
-              Edit
+              Editar
             </button>
 
             {params.row.status && (
@@ -120,14 +120,14 @@ export const ProviderList = () => {
               d-flex 
               align-items-center"
       >
-        <h2 className="display-5"> Provider List </h2>
+        <h2 className="display-5"> Lista de Proveedores </h2>
         <div className="d-flex mt-3 ms-4 align-itmes-center">
           <Toggle
             onChange={(e) => setToggle(e.target.checked)}
             toggle={toggle}
           />
           <span className="ms-3">
-            Providers: {toggle ? "Active" : "Inactive"}
+            Proveedores: {toggle ? "Activo" : "Inactivo"}
           </span>
         </div>
         <button
@@ -137,7 +137,7 @@ export const ProviderList = () => {
               btn-outline-primary"
           onClick={handleOpenModalC}
         >
-          Create
+          Crear
         </button>
       </div>
       <DataGrid

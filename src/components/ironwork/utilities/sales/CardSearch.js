@@ -70,7 +70,7 @@ export const CardSearch = ({ product, products, typeValue }) => {
       <div className="d-flex ps-5">
         <input
           className="form-control ps-5"
-          placeholder={"default 0"}
+          placeholder={"0"}
           min={0}
           max={product.amount}
           name="amount"
@@ -83,7 +83,7 @@ export const CardSearch = ({ product, products, typeValue }) => {
             handleAddSalesOption(product._id, typeValue);
           }}
         >
-          add
+          agregar
         </button>
       </div>
     </div>

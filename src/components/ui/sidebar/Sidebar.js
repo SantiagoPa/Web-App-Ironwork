@@ -62,13 +62,13 @@ export const Sidebar = () => {
             <button onClick={analitycsNavigate} className="btn link">
               <li className="sidebarListItem">
                 <Timeline className="sidebarIcon" />
-                Analytics
+                Analitica
               </li>
             </button>
             <button onClick={salesNavigate} className="btn link">
               <li className="sidebarListItem">
                 <TrendingUp className="sidebarIcon" />
-                Sales
+                Ventas y compras
               </li>
             </button>
             {/* <button onClick={reportsNavigate} className="btn link">
@@ -85,19 +85,19 @@ export const Sidebar = () => {
             <button onClick={customerNavigate} className=" btn link">
               <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />
-                Customers
+                Clientes
               </li>
             </button>
             <button onClick={productNavigate} className="btn link">
               <li className="sidebarListItem">
                 <Storefront className="sidebarIcon" />
-                Products
+                Productos
               </li>
             </button>
             <button onClick={transactionsNavigate} className="btn link">
               <li className="sidebarListItem">
                 <AttachMoney className="sidebarIcon" />
-                Transactions
+                Transacciones
               </li>
             </button>
             {/* <button onClick={reportNavigate} className="btn link">

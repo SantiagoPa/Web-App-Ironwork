@@ -45,7 +45,7 @@ export const NewUser = () => {
      
     >
       <div className="newUser p-4 d-flex flex-column">
-        <h1 className="newUserTitle">New User</h1>
+        <h1 className="newUserTitle">Nuevo Usuario</h1>
         <form 
         className="
         newUserForm 
@@ -54,7 +54,7 @@ export const NewUser = () => {
         onSubmit={ handleSubmitUser }
         >
           <div className="newUserItem">
-            <label className="form-label">Name</label>
+            <label className="form-label">nombre</label>
             <input 
             className="form-control" 
             type="text" 
@@ -64,7 +64,7 @@ export const NewUser = () => {
             />
           </div>
           <div className="newUserItem">
-            <label className="form-label">Email</label>
+            <label className="form-label">correo</label>
             <input
               className="form-control"
               type="email"
@@ -74,7 +74,7 @@ export const NewUser = () => {
             />
           </div>
           <div className="newUserItem">
-            <label className="form-label">Password</label>
+            <label className="form-label">contraseña</label>
             <input
               className="form-control"
               type="password"
@@ -84,15 +84,15 @@ export const NewUser = () => {
             />
           </div>
           <div className="newUserItem">
-            <label className="form-label">Role</label>
+            <label className="form-label">Rol</label>
             <select 
             className="form-select" 
             name="role"
             onChange={ handleInputChange } 
             id="active"
             >
-              <option value="ADMIN_ROLE">admin_role</option>
-              <option value="USER_ROLE">user_role</option>
+              <option value="ADMIN_ROLE">admin</option>
+              <option value="USER_ROLE">usuario</option>
             </select>
           </div>
           <button className="btn btn-primary mt-4 d-flex">Create</button>

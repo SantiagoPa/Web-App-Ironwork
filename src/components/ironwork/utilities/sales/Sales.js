@@ -58,7 +58,7 @@ export const Sales = () => {
                       className="accordion-button"
                       onClick={handleShowAccordion}
                     >
-                      show
+                      mostrar
                     </button>
                   </div>
                   <div
@@ -101,7 +101,7 @@ export const Sales = () => {
                       className="accordion-button"
                       onClick={handleShowAccordion}
                     >
-                      show
+                      mostrar
                     </button>
                   </div>
                   <div

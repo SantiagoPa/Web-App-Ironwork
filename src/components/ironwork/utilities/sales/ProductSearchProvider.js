@@ -21,7 +21,7 @@ export const ProductSearchProvider = ({ productFilter, products, handleInputChan
     }>
       <div className="col">
         <form>
-          <label className="form-label">search product</label>
+          <label className="form-label">buscar producto</label>
           <div className="d-flex">
             <input
               className="form-control"
@@ -32,7 +32,7 @@ export const ProductSearchProvider = ({ productFilter, products, handleInputChan
               className="btn mx-2 btn-outline-success"
               onClick={handleOpenModalC}
             >
-              create
+              crear
             </button>
           </div>
         </form>
