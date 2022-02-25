@@ -1,59 +1,93 @@
-import { useEffect, useState } from 'react';
-import './featuredinfo.css';
+import { useEffect, useState } from "react";
+import "./featuredinfo.css";
 import { ArrowDownward, ArrowUpward } from "@material-ui/icons";
 
-export const FeaturedInfo = ({cardSemester}) => {
+export const FeaturedInfo = ({ cardSemester }) => {
+  const [utilities, setUtilities] = useState([]);
 
-    const [perc, setPerc] = useState(0)
+  useEffect(() => {
+    if (cardSemester.length > 0) {
+      const utility = cardSemester.map((el) => {
+        return {
+          utility: el.income - el.outgoins,
+        };
+      });
+      setUtilities((utilities) => (utilities = utility));
+    }
+  }, [cardSemester]);
 
-    const utilities = cardSemester.map((el)=>{
-        return{
-            utility: el.income-el.outgoins
-        }
-    })
-    const porcentaje = (utilities[5].utility*100/utilities[4].utility-100)
-    
-    const mediaTrimestre1 = (utilities[5].utility + utilities[4].utility +utilities[3].utility)/3
-    const mediaTrimestre2 = (utilities[2].utility + utilities[1].utility +utilities[0].utility)/3
-   
-    const porcentaje2 = (mediaTrimestre1*100/mediaTrimestre2-100)
+  let porcentaje1, porcentaje2, media1, media2;
 
-    return (
-        <div className="featured">
-            <div className="featuredItem">
-                <span className="featuredTitle">utility</span>
-                <div className="featuredMoneyContainer">
-                <span className="featuredMoney">$ {utilities[5].utility}</span>
-                <span className="featuredMoneyRate">
-                    %{Math.floor(porcentaje)}{" "}
-                    {
-                        porcentaje < 0 ? (
-                            <ArrowDownward  className="featuredIcon negative"/>
-                        ) : (
-                            <ArrowUpward  className="featuredIcon"/>
-                        )
-                    } 
-                </span>
-                </div>
-                <span className="featuredSub">Compared to last month</span>
-            </div>
-            <div className="featuredItem">
-                <span className="featuredTitle">utility</span>
-                <div className="featuredMoneyContainer">
-                <span className="featuredMoney">$ {Math.floor(mediaTrimestre1)}</span>
-                <span className="featuredMoneyRate">
-                    %{Math.floor(porcentaje2)}{" "}
-                    {
-                        porcentaje2 < 0 ? (
-                            <ArrowDownward  className="featuredIcon negative"/>
-                        ) : (
-                            <ArrowUpward  className="featuredIcon"/>
-                        )
-                    } 
-                </span>
-                </div>
-                <span className="featuredSub">Compared to last trimestes</span>
-            </div>
+  utilities[5]
+    ? (porcentaje1 = (utilities[5].utility * 100) / utilities[4].utility - 100)
+    : (porcentaje1 = 0);
+
+  if(utilities[5]){
+      media1 = utilities[5].utility + utilities[4].utility + utilities[3].utility/3;
+      media2 = utilities[2].utility + utilities[1].utility + utilities[0].utility/3;
+      porcentaje2 = media1*100/media2-100
+  }else {
+    porcentaje2 = 0;
+  }
+
+  return (
+    <div className="featured">
+      {utilities[5] ? (
+        <div className="featuredItem">
+          <span className="featuredTitle">utility</span>
+          <div className="featuredMoneyContainer">
+            <span className="featuredMoney">$ {utilities[5].utility}</span>
+            <span className="featuredMoneyRate">
+              %{Math.floor(porcentaje1)}{" "}
+              {porcentaje1 < 0 ? (
+                <ArrowDownward className="featuredIcon negative" />
+              ) : (
+                <ArrowUpward className="featuredIcon" />
+              )}
+            </span>
+          </div>
+          <span className="featuredSub">Compared to last month</span>
         </div>
-    )
-}
+      ) : (
+        <div
+          className="
+                        alert alert-warning 
+                        featuredItem
+                        d-flex
+                        justify-content-center 
+                        align-items-center"
+        >
+          ...cargando
+        </div>
+      )}
+      {utilities[5] ? (
+        <div className="featuredItem">
+          <span className="featuredTitle">utility</span>
+          <div className="featuredMoneyContainer">
+            <span className="featuredMoney">$ {Math.floor(media1)}</span>
+            <span className="featuredMoneyRate">
+              %{Math.floor(porcentaje2)}{" "}
+              {porcentaje2 < 0 ? (
+                <ArrowDownward className="featuredIcon negative" />
+              ) : (
+                <ArrowUpward className="featuredIcon" />
+              )}
+            </span>
+          </div>
+          <span className="featuredSub">Compared to last month</span>
+        </div>
+      ) : (
+        <div
+          className="
+                        alert alert-warning 
+                        featuredItem
+                        d-flex
+                        justify-content-center 
+                        align-items-center"
+        >
+          ...cargando
+        </div>
+      )}
+    </div>
+  );
+};

@@ -1,4 +1,4 @@
-let enviroment = true
+let enviroment = false
 let url
 
 enviroment ? url = 'https://canielcm-replacements-warehous.herokuapp.com/api/'
